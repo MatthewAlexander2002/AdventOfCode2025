@@ -2,7 +2,7 @@ import math
 
 def main():
     total = 0
-    with open("Day2/test.txt", 'r') as file:
+    with open("Day2/input.txt", 'r') as file:
         for text in file:
             updated = text.split(",")
             for num in updated:
@@ -19,9 +19,10 @@ def main():
 #digits = [int(digit) for digit in str(number)]
 def search(digits, length):
     result = False
-    for window in range(1,int(length/2)):
+    mid = int(length/2)+1
+    for window in range(1,mid):
         window_con = True
-        for pos in range(0,length-window, window):
+        for pos in range(0,length, window):
             if(digits[pos:pos+window]!=digits[0:window]):
                 window_con = False
                 break
